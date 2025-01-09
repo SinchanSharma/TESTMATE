@@ -1,0 +1,241 @@
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
+    }
+
+    .omr-container {
+      height: 100%;
+      width: 25%;
+      border: 10px solid #000000bd;
+      border-left-width: 3px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #qid-container {
+      height: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    #submit-button {
+      background-color: orange;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 18px;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      margin: 0px 70px 20px 70px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      /* Added transition */
+    }
+
+    #submit-button:hover {
+      background-color: rgb(210, 143, 19);
+    }
+
+    #submit-button:active {
+      background-color: orange;
+      transform: scale(0.9);
+    }
+
+    header {
+      height: 65px;
+      background-color: #1d234b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header span {
+      font-size: 20px;
+      color: white;
+    }
+
+    #fullscreen-button {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    #test-name {
+      margin-left: 40px;
+    }
+
+    .main-container {
+      height: calc(100vh - 65px);
+      display: flex;
+    }
+
+    .test-container {
+      height: 100%;
+      width: 75%;
+      border: 10px solid #000000bd;
+    }
+
+
+    .content-container {
+      height: 85%;
+      border: 10px solid #000000bd;
+      border-width: 0 0 3px 0;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .jagah-chheko {
+      flex-grow: 1;
+    }
+
+    .button-container {
+      height: 14%;
+      border: 1px solid #000000bd;
+      border-width: 3px 0 0 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .nav-button {
+      font-size: 18px;
+      background: none;
+      border: none;
+      width: 130px;
+      cursor: pointer;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    }
+
+    .nav-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .nav-button:active {
+      font-size: 20px;
+      transform: scale(1.1);
+    }
+
+
+    button svg {
+      fill: #01409f;
+      height: 45px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+
+
+    #whole-question {
+      margin: 30px 20px 0px 20px;
+      display: flex;
+    }
+
+    #test-question-num {
+      font-size: 20px;
+      font-weight: 500;
+      margin-right: 15px;
+    }
+
+    #test-question-text {
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    #test-question-tag-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    #test-question-tag {
+      color: #007491;
+      font-family: 'Times New Roman', Times, serif;
+      margin-right: 15px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    #test-question-fig-container {
+      display: flex;
+      justify-content: center;
+    }
+
+
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 0 18px 10px 18px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f0f0f0;
+      padding: 8px;
+      cursor: pointer;
+      list-style-type: none;
+      transition: background-color 0.15s ease-in-out;
+    }
+
+    li:hover {
+      background-color: #e6e6e6;
+    }
+
+    li.active {
+      background-color: rgb(148, 255, 148);
+    }
+
+    /* Popup styles */
+    #confirmation-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      display: none;
+      z-index: 1000;
+      text-align: center;
+    }
+
+    #popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
+    }
+
+    #popup-buttons {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .popup-button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup-button#yes-button {
+      background-color: green;
+      color: white;
+    }
+
+    .popup-button#no-button {
+      background-color: red;
+      color: white;
+    }

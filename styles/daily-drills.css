@@ -1,0 +1,97 @@
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        #gen-button {
+            background-color: orange;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 23px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Added transition */
+          }
+        #gen-button:hover{
+          background-color: rgb(220, 143, 0);
+        }
+        #gen-button:active{
+          background-color: rgb(255, 174, 25);
+          transform: scale(0.97);
+        }
+
+        .card-container {
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 150px);
+            grid-auto-rows: 180px;
+            gap: 25px;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .card {
+            background-color: #090d3d1f;
+            height: 190px;
+            width: 160px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .test-num {
+            margin-top: 30px;
+        }
+
+        .test-date {
+            margin-top: 3px;
+        }
+
+        .test-details{
+            margin-top: 3px;
+        }
+
+        .test-condition {
+            color: rgb(255, 255, 255);
+            background-color: green;
+            padding: 6px 25px;
+            border: none;
+            border-radius: 16px;
+            margin-top: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Added transition */
+        }
+        .test-condition:hover{
+          background-color: rgb(0, 187, 0);
+        }
+        .test-condition:active{
+          background-color: rgb(0, 239, 0);
+          transform: scale(0.9);
+        }
+
+
+        .final-condition {
+            background-color: #b3b3b3;
+            color: black;
+            padding: 6px 25px;
+            border: none;
+            border-radius: 16px;
+            margin-top: 40px;
+        }
+
+        #dropdown{
+            background-color: #2c3050;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            margin-right: 10px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        #dropdown:hover{
+            border: 1px solid #00ffc4;
+        }

@@ -1,0 +1,157 @@
+    body {
+        overflow-x: hidden;
+    }
+
+    #my-chapters-container {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 20px 0px;
+    }
+
+    .chapters-container {
+        height: 300px;
+        width: 31%;
+        background-color: #090d3d1f;
+        border: none;
+        border-radius: 15px;
+    }
+
+    .chapter-name {
+        height: 10%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .my-chapters {
+        height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        overflow-y: auto;
+    }
+
+    .my-chapters::-webkit-scrollbar {
+        display: none;
+        /* Hides the scrollbar */
+    }
+
+    .chapter-card {
+        height: 70px;
+        width: 7em;
+        border: none;
+        border-radius: 8px;
+        margin: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+
+    .physics-card {
+        background-color: rgb(125, 184, 255);
+    }
+
+    .chemistry-card {
+        background-color: rgb(255, 133, 133);
+    }
+
+    .biology-card {
+        background-color: rgb(124, 255, 104);
+    }
+
+
+    .chapter-card p {
+        font-size: 10px;
+        margin-bottom: 4px;
+    }
+
+    .add-button-container {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .add-chapter {
+        background-color: orange;
+        color: black;
+        font-weight: 600;
+        border: none;
+        padding: 0px 30px;
+        margin-bottom: 5px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        /* Added transition */
+    }
+
+    .remove-my-chapter {
+        display: none;
+        background-color: #ff3434;
+        color: black;
+        font-weight: 600;
+        border: none;
+        padding: 0px 30px;
+        margin-bottom: 5px;
+        margin-right: 5px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        /* Added transition */
+    }
+
+    .remove-my-chapter:active {
+        background-color: #ff0000;
+        transform: scale(0.9);
+    }
+
+    .add-chapter:active {
+        background-color: rgb(221, 144, 0);
+        transform: scale(0.9);
+    }
+
+    .chhupa-re{
+        display: none;
+        height: 300px;
+        margin: 20px;
+        background-color: #090d3d1f;
+        border: none;
+        border-radius: 18px;
+    }
+
+    .subject-name {
+        height: 10%;
+        text-align: center;
+    }
+
+    .subject-chapters {
+        height: 80%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        overflow-y: auto;
+    }
+
+    .subject-chapters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .final-add-button-container {
+        height: 10%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .selected {
+        background-color: #00ffc4;
+    }
+
+    .selected-to-remove {
+        background-color: #00ffc4;
+    }
