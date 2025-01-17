@@ -35,13 +35,10 @@
       /* Added transition */
     }
 
-    #submit-button:hover {
-      background-color: rgb(210, 143, 19);
-    }
 
     #submit-button:active {
       background-color: orange;
-      transform: scale(0.9);
+      transform: scale(0.95);
     }
 
     header {
@@ -180,6 +177,17 @@
       cursor: pointer;
       list-style-type: none;
       transition: background-color 0.15s ease-in-out;
+    }
+
+    #options-list li {
+      display: flex;
+    }
+
+    #options-list li span:nth-child(2) {
+      display: inline-block;
+      width: 90%;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     li:hover {
