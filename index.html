@@ -19,11 +19,22 @@
     <h1>HOME</h1>
   </nav>
 
+
+
   <aside></aside>
-
-
-
   <main></main>
+
+  <script>
+    const password = "111235";
+
+    const pass = prompt("Enter password:");
+
+    if (pass === password) {
+      alert("Access granted!");
+    } else {
+      document.body.innerHTML = "Access denied!";
+    }
+  </script>
 
 </body>
 
