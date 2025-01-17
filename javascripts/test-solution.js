@@ -71,10 +71,10 @@ function renderQuestion() {
     }
     // Populate options
     optionItems.innerHTML = `
-<li id="o1">1. ${currentContent.o1}</li>
-<li id="o2">2. ${currentContent.o2}</li>
-<li id="o3">3. ${currentContent.o3}</li>
-<li id="o4">4. ${currentContent.o4}</li>
+              <li id="o1"><span>(1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>${currentContent.o1}</span></li>
+              <li id="o2"><span>(2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>${currentContent.o2}</span></li>
+              <li id="o3"><span>(3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>${currentContent.o3}</span></li>
+              <li id="o4"><span>(4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>${currentContent.o4}</span></li>
 `;
     const actualAns = currentContent.ans;
     const myAns = currentCard.yourResponse[currentIndex];
