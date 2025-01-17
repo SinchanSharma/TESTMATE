@@ -2,81 +2,65 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="styles/common-styles.css">
-  <link rel="stylesheet" href="styles/my-chapters.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/common-styles.css">
+    <link rel="stylesheet" href="styles/my-chapters.css">
+    
 </head>
 
 <body>
-  <nav>
-    <ul>
-      <li><a href="my-chapters.html">My chapters</a></li>
-      <li><a href="scoreboard.html">Scoreboard</a></li>
-      <li><a href="daily-drills.html">Daily drills</a></li>
-      <li><a href="index.html">Home</a></li>
-    </ul>
-    <h1>MY CHAPTERS</h1>
-  </nav>
-  <div id="my-chapters-container">
-    <div class="chapters-container">
-      <div class="chapter-name">PHYSICS</div>
-      <div class="my-chapters" id="my-phy-chapters"></div>
-      <div class="add-button-container">
-        <button class="remove-my-chapter" id="remove-my-physics">REMOVE</button>
-        <button class="add-chapter" id="add-phy">ADD</button>
-      </div>
+    <nav>
+        <ul>
+            <li><a href="my-chapters.html">My chapters</a></li>
+            <li><a href="scoreboard.html">Scoreboard</a></li>
+            <li><a href="daily-drills.html">Daily drills</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="refining-lab.html">Refining lab</a></li>
+        </ul>
+        <h1>MY CHAPTERS</h1>
+    </nav>
+
+    <div class="my-subjects-container">
+
+        <div class="my-subject">
+            <div class="sub-name">PHYSICS</div>
+            <div class="subject" id="my-physics"></div>
+            <div class="buttons-container">
+                <button class="r-btn" id="remove-physics">REMOVE</button>
+                <button class="a-btn" id="show-all-physics">ADD</button>
+            </div>
+        </div>
+
+        <div class="my-subject">
+            <div class="sub-name">CHEMISTRY</div>
+            <div class="subject" id="my-chemistry"></div>
+            <div class="buttons-container">
+                <button class="r-btn" id="remove-chemistry">REMOVE</button>
+                <button class="a-btn" id="show-all-chemistry">ADD</button>
+            </div>
+        </div>
+
+        <div class="my-subject">
+            <div class="sub-name">BIOLOGY</div>
+            <div class="subject" id="my-biology"></div>
+            <div class="buttons-container">
+                <button class="r-btn" id="remove-biology">REMOVE</button>
+                <button class="a-btn" id="show-all-biology">ADD</button>
+            </div>
+        </div>
+
     </div>
 
-    <div class="chapters-container">
-      <div class="chapter-name">CHEMISTRY</div>
-      <div class="my-chapters" id="my-che-chapters"></div>
-      <div class="add-button-container">
-        <button class="remove-my-chapter" id="remove-my-chemistry">REMOVE</button>
-        <button class="add-chapter" id="add-che">ADD</button>
-      </div>
+    <div class="all-chapters-container">
+        <div class="all-chapters" id="all-chapters"></div>
+        <div class="all-chapters-button-container">
+        </div>
     </div>
 
-    <div class="chapters-container">
-      <div class="chapter-name">BIOLOGY</div>
-      <div class="my-chapters" id="my-bio-chapters"></div>
-      <div class="add-button-container">
-        <button class="remove-my-chapter" id="remove-my-biology">REMOVE</button>
-        <button class="add-chapter" id="add-bio">ADD</button>
-      </div>
-    </div>
-  </div>
+    <script src="javascripts/my-chapters.js"></script>
 
-  <div class="chhupa-re" id="syllabus-physics-container">
-    <div class="subject-name">PHYSICS CHAPTERS</div>
-    <div class="subject-chapters" id="phy-chapters">
-    </div>
-    <div class="final-add-button-container">
-      <button class="add-chapter" id="finally-add-physics">ADD</button>
-    </div>
-  </div>
-  <div class="chhupa-re" id="syllabus-chemistry-container">
-    <div class="subject-name">CHEMISTRY CHAPTERS</div>
-    <div class="subject-chapters" id="che-chapters">
-    </div>
-    <div class="final-add-button-container">
-      <button class="add-chapter" id="finally-add-chemistry">ADD</button>
-    </div>
-  </div>
-  <div class="chhupa-re" id="syllabus-biology-container">
-    <div class="subject-name">BIOLOGY CHAPTERS</div>
-    <div class="subject-chapters" id="bio-chapters">
-    </div>
-    <div class="final-add-button-container">
-      <button class="add-chapter" id="finally-add-biology">ADD</button>
-    </div>
-  </div>
-
-
-<script src="javascripts/my-chapters.js"></script>
-  
 </body>
 
 </html>
