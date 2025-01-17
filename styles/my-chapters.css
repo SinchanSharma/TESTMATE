@@ -1,157 +1,171 @@
-    body {
-        overflow-x: hidden;
-    }
+body {
+    overflow-x: hidden;
+}
 
-    #my-chapters-container {
-        height: auto;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        padding: 20px 0px;
-    }
+.my-subjects-container {
+    height: calc(60vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
-    .chapters-container {
-        height: 300px;
-        width: 31%;
-        background-color: #090d3d1f;
-        border: none;
-        border-radius: 15px;
-    }
+.my-subject {
+    height: 90%;
+    width: 32%;
+    background-color: rgb(0 0 0 / 15%);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
 
-    .chapter-name {
-        height: 10%;
-        width: 100%;
-        text-align: center;
-    }
+.sub-name {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .my-chapters {
-        height: 80%;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: flex-start;
-        overflow-y: auto;
-    }
+.subject {
+    max-height: 77%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    padding-left: 1%;
+    margin-bottom: auto;
+}
 
-    .my-chapters::-webkit-scrollbar {
-        display: none;
-        /* Hides the scrollbar */
-    }
+.subject::-webkit-scrollbar {
+    display: none;
+}
 
-    .chapter-card {
-        height: 70px;
-        width: 7em;
-        border: none;
-        border-radius: 8px;
-        margin: 8px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: end;
-    }
+.my-card {
+    font-size: 10px;
+    height: 50px;
+    width: 31%;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 1%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    /* Adds the shadow */
+}
 
-    .physics-card {
-        background-color: rgb(125, 184, 255);
-    }
+.buttons-container {
+    height: 13%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
-    .chemistry-card {
-        background-color: rgb(255, 133, 133);
-    }
+.all-chapters-container {
+    height: calc(68vh - 80px);
+    /* margin-left: 10px; */
+    display: flex;
+    flex-direction: column;
+}
 
-    .biology-card {
-        background-color: rgb(124, 255, 104);
-    }
+.all-chapters {
+    max-height: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    margin-bottom: auto;
+    padding: 0px 0.5%;
+}
 
+.all-chapters::-webkit-scrollbar {
+    display: none;
+}
 
-    .chapter-card p {
-        font-size: 10px;
-        margin-bottom: 4px;
-    }
+.card {
+    margin: 0.5%;
+    font-size: 14px;
+    height: 80px;
+    width: 19%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    /* Adds the shadow */
+}
 
-    .add-button-container {
-        height: 10%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
+.all-chapters-button-container {
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .add-chapter {
-        background-color: orange;
-        color: black;
-        font-weight: 600;
-        border: none;
-        padding: 0px 30px;
-        margin-bottom: 5px;
-        border-radius: 15px;
-        cursor: pointer;
-        transition: transform 0.3s ease, background-color 0.3s ease;
-        /* Added transition */
-    }
+.p {
+    background-color: #6bbcdf;
+}
 
-    .remove-my-chapter {
-        display: none;
-        background-color: #ff3434;
-        color: black;
-        font-weight: 600;
-        border: none;
-        padding: 0px 30px;
-        margin-bottom: 5px;
-        margin-right: 5px;
-        border-radius: 15px;
-        cursor: pointer;
-        transition: transform 0.3s ease, background-color 0.3s ease;
-        /* Added transition */
-    }
+.c {
+    background-color: #e0a0a0;
+}
 
-    .remove-my-chapter:active {
-        background-color: #ff0000;
-        transform: scale(0.9);
-    }
+.b {
+    background-color: #7dd370;
+}
 
-    .add-chapter:active {
-        background-color: rgb(221, 144, 0);
-        transform: scale(0.9);
-    }
+.s2-add {
+    background-color: #00ffc4;
+}
 
-    .chhupa-re{
-        display: none;
-        height: 300px;
-        margin: 20px;
-        background-color: #090d3d1f;
-        border: none;
-        border-radius: 18px;
-    }
+.s2-remove {
+    background-color: #00ffc4;
+}
 
-    .subject-name {
-        height: 10%;
-        text-align: center;
-    }
+.add-button {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    padding: 0px 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-    .subject-chapters {
-        height: 80%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: flex-start;
-        overflow-y: auto;
-    }
+.add-button:active {
+    transform: scale(0.95);
+}
 
-    .subject-chapters::-webkit-scrollbar {
-        display: none;
-    }
+.r-btn {
+    background-color: rgb(255, 0, 0);
+    padding: 0px 25px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+    position: absolute;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-    .final-add-button-container {
-        height: 10%;
-        display: flex;
-        justify-content: center;
-    }
+.r-btn:active {
+    transform: scale(0.95);
+}
 
-    .selected {
-        background-color: #00ffc4;
-    }
+.a-btn {
+    background-color: green;
+    padding: 0px 15px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-    .selected-to-remove {
-        background-color: #00ffc4;
-    }
+.a-btn:active {
+    transform: scale(0.95);
+}
