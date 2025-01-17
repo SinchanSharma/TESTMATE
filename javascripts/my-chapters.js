@@ -1,298 +1,306 @@
-    const syllabusPhyContainer = document.getElementById("syllabus-physics-container")
-    const syllabusCheContainer = document.getElementById("syllabus-chemistry-container")
-    const syllabusBioContainer = document.getElementById("syllabus-biology-container")
-    const removePhy = document.getElementById("remove-my-physics")
-    const removeChe = document.getElementById("remove-my-chemistry")
-    const removeBio = document.getElementById("remove-my-biology")
-    const addPhysicsChapter = document.getElementById("finally-add-physics");
-    const addChemistryChapter = document.getElementById("finally-add-chemistry");
-    const addBiologyChapter = document.getElementById("finally-add-biology");
-    const addPhy = document.getElementById("add-phy");
-    const addChe = document.getElementById("add-che");
-    const addBio = document.getElementById("add-bio");
-    const myPhyChapters = document.getElementById("my-phy-chapters");
-    const myCheChapters = document.getElementById("my-che-chapters");
-    const myBioChapters = document.getElementById("my-bio-chapters");
-    const syllabusPhy = document.getElementById("phy-chapters");
-    const syllabusChe = document.getElementById("che-chapters");
-    const syllabusBio = document.getElementById("bio-chapters");
+const buttonContainer = document.querySelector(".all-chapters-button-container")
 
-    addPhy.addEventListener("click",()=>{
-      syllabusPhyContainer.style.display = "block";
-    })
-    addChe.addEventListener("click",()=>{
-      syllabusCheContainer.style.display = "block";
-    })
-    addBio.addEventListener("click",()=>{
-      syllabusBioContainer.style.display = "block";
-    })
+const showAllPhysics = document.getElementById("show-all-physics")
+const showAllChemistry = document.getElementById("show-all-chemistry")
+const showAllBiology = document.getElementById("show-all-biology")
 
-    const myPhysicsChapters = JSON.parse(localStorage.getItem("myPhysicsChapters")) || [];
-    const myChemistryChapters = JSON.parse(localStorage.getItem("myChemistryChapters")) || [];
-    const myBiologyChapters = JSON.parse(localStorage.getItem("myBiologyChapters")) || [];
+const removePhysics = document.getElementById("remove-physics")
+const removeChemistry = document.getElementById("remove-chemistry")
+const removeBiology = document.getElementById("remove-biology")
+
+const myPhysics = document.getElementById("my-physics")
+const myChemistry = document.getElementById("my-chemistry")
+const myBiology = document.getElementById("my-biology")
+
+const allChapters = document.getElementById("all-chapters")
 
 
-    // Retrieve allChapters from localStorage or initialize it
-    let allPhysicsChapters = JSON.parse(localStorage.getItem("allPhysicsChapters")) || ["BM & Vectors", "Unit & Dimension", "Kinematics", "NLM & Friction", "Work, Energy & Power", "Circular Motion", "COM & Collision", "Rotational Motion", "Gravitation", "Fluid mechanics", "Thermal Physics", "Oscillation", "Wave Motion", "Electrostatics", "Current Electricity", "Capacitor", "Magnetism", "EMI", "AC", "EMW", "Ray Optics", "Wave Optics", "Modern Physics", "Semiconductor"];
-    let allChemistryChapters = JSON.parse(localStorage.getItem("allChemistryChapters")) || ["Mole Concept", "Atomic Structure", "Chemical Equilibrium", "Ionic Equilibrium", "Thermodynamics", "Redox Reactions", "Chemical Kinetics", "Solutions", "Electrochemistry", "IUPAC", "Isomerism", "GOC Ⅰ", "GOC Ⅱ", "Periodic Table", "Chemical Bonding", "p-Block", "d & f-Block", "Coordination Com"];
-    let allBiologyChapters = JSON.parse(localStorage.getItem("allBiologyChapters")) || ["Living World", "Biological Classi", "Plant Kingdom", "Animal Kingdom", "Morphology", "Anatomy", "Animal Tissue", "Cell", "Cell Cycle", "Biomolecules", "Photosynthesis", "Respiration in Plants", "PGR", "Human Respiration", "Circulation", "Excretion", "Bones & Muscles", "Neural System", "Hormonal System", "Angiosperms", "Human Reproduction", "Reproductive Health", "POI & Variation", "MBOI", "Evolution", "HH & Disease", "Microbes", "Biotechnology Ⅰ", "Biotechnology Ⅱ", "Organisms & Pop", "Ecosystem", "Biodiversity & Con"];
+const myPhysicsChapters = JSON.parse(localStorage.getItem("myPhysicsChapters")) || [];
+const myChemistryChapters = JSON.parse(localStorage.getItem("myChemistryChapters")) || [];
+const myBiologyChapters = JSON.parse(localStorage.getItem("myBiologyChapters")) || [];
 
-    // Render all chapters
-    function renderChapters() {
-      syllabusPhy.innerHTML = ""; // Clear existing chapters
-      for (let chapter of allPhysicsChapters) {
-        const chapterCard = document.createElement("span");
-        chapterCard.className = "chapter-card physics-card";
-        chapterCard.innerHTML = `<p>${chapter}</p>`;
+// Retrieve allChapters from localStorage or initialize it
+let allPhysicsChapters = JSON.parse(localStorage.getItem("allPhysicsChapters")) || ["BM & Vectors", "Unit & Dimension", "Kinematics", "NLM & Friction", "Work, Energy & Power", "Circular Motion", "COM & Collision", "Rotational Motion", "Gravitation", "Fluid mechanics", "Thermal Physics", "Oscillation", "Wave Motion", "Electrostatics", "Current Electricity", "Capacitor", "Magnetism", "EMI", "AC", "EMW", "Ray Optics", "Wave Optics", "Modern Physics", "Semiconductor"];
+let allChemistryChapters = JSON.parse(localStorage.getItem("allChemistryChapters")) || ["Mole Concept", "Atomic Structure", "Chemical Equilibrium", "Ionic Equilibrium", "Thermodynamics", "Redox Reactions", "Chemical Kinetics", "Solutions", "Electrochemistry", "IUPAC", "Isomerism", "GOC Ⅰ", "GOC Ⅱ", "Periodic Table", "Chemical Bonding", "p-Block", "d & f-Block", "Coordination Com"];
+let allBiologyChapters = JSON.parse(localStorage.getItem("allBiologyChapters")) || ["Living World", "Biological Classi", "Plant Kingdom", "Animal Kingdom", "Morphology", "Anatomy", "Animal Tissue", "Cell", "Cell Cycle", "Biomolecules", "Photosynthesis", "Respiration in Plants", "PGR", "Human Respiration", "Circulation", "Excretion", "Bones & Muscles", "Neural System", "Hormonal System", "Angiosperms", "Human Reproduction", "Reproductive Health", "POI & Variation", "MBOI", "Evolution", "HH & Disease", "Microbes", "Biotechnology Ⅰ", "Biotechnology Ⅱ", "Organisms & Pop", "Ecosystem", "Biodiversity & Con"];
+
+function renderMyChapters() {
+    myPhysics.innerHTML = ""
+    myPhysicsChapters.forEach(chapter => {
+        const chapterCard = document.createElement("span")
+        chapterCard.className = "my-card p"
+        chapterCard.innerText = chapter
+        myPhysics.appendChild(chapterCard)
         chapterCard.addEventListener("click", () => {
-          chapterCard.classList.toggle("selected");
+            chapterCard.classList.toggle("s2-remove");
+            const anySelected = !!myPhysics.querySelector(".s2-remove");
+            removePhysics.style.display = anySelected ? "block" : "none";
         });
-        syllabusPhy.appendChild(chapterCard);
-      }
 
+    })
 
-      myPhyChapters.innerHTML = "";
-      for (let item of myPhysicsChapters) {
-        const chapterC = document.createElement("span");
-        chapterC.className = "chapter-card physics-card";
-        chapterC.innerHTML = `<p>${item}</p>`;
-        myPhyChapters.appendChild(chapterC);
-        chapterC.addEventListener("click", () => {
-          chapterC.classList.toggle("selected-to-remove");
-          removePhy.style.display = "block";
-        });
-      }
-
-
-      syllabusChe.innerHTML = ""; // Clear existing chapters
-      for (let chapter of allChemistryChapters) {
-        const chapterCard = document.createElement("span");
-        chapterCard.className = "chapter-card chemistry-card";
-        chapterCard.innerHTML = `<p>${chapter}</p>`;
+    myChemistry.innerHTML = ""
+    myChemistryChapters.forEach(chapter => {
+        const chapterCard = document.createElement("span")
+        chapterCard.className = "my-card c"
+        chapterCard.innerText = chapter
+        myChemistry.appendChild(chapterCard)
         chapterCard.addEventListener("click", () => {
-          chapterCard.classList.toggle("selected");
-        });
-        syllabusChe.appendChild(chapterCard);
-      }
+            chapterCard.classList.toggle("s2-remove")
+            const anySelected = !!myChemistry.querySelector(".s2-remove")
+            removeChemistry.style.display = anySelected ? "block" : "none"
+        })
+    })
 
-
-      myCheChapters.innerHTML = "";
-      for (let item of myChemistryChapters) {
-        const chapterC = document.createElement("span");
-        chapterC.className = "chapter-card chemistry-card";
-        chapterC.innerHTML = `<p>${item}</p>`;
-        myCheChapters.appendChild(chapterC);
-        chapterC.addEventListener("click", () => {
-          chapterC.classList.toggle("selected-to-remove");
-          removeChe.style.display = "block";
-        });
-      }
-
-      syllabusBio.innerHTML = ""; // Clear existing chapters
-      for (let chapter of allBiologyChapters) {
-        const chapterCard = document.createElement("span");
-        chapterCard.className = "chapter-card biology-card";
-        chapterCard.innerHTML = `<p>${chapter}</p>`;
+    myBiology.innerHTML = ""
+    myBiologyChapters.forEach(chapter => {
+        const chapterCard = document.createElement("span")
+        chapterCard.className = "my-card b"
+        chapterCard.innerText = chapter
+        myBiology.appendChild(chapterCard)
         chapterCard.addEventListener("click", () => {
-          chapterCard.classList.toggle("selected");
-        });
-        syllabusBio.appendChild(chapterCard);
-      }
+            chapterCard.classList.toggle("s2-remove")
+            const anySelected = !!myBiology.querySelector(".s2-remove")
+            removeBiology.style.display = anySelected ? "block" : "none"
+        })
+    })
 
-      myBioChapters.innerHTML = "";
-      for (let item of myBiologyChapters) {
-        const chapterC = document.createElement("span");
-        chapterC.className = "chapter-card biology-card";
-        chapterC.innerHTML = `<p>${item}</p>`;
-        myBioChapters.appendChild(chapterC);
-        chapterC.addEventListener("click", () => {
-          chapterC.classList.toggle("selected-to-remove");
-          removeBio.style.display = "block";
-        });
-      }
-
-    }
+}
 
 
-    // Handle Add Chapter Button Click
-    addPhysicsChapter.addEventListener("click", () => {
-      const selectedChapters = [];
-      const chapterCards = syllabusPhy.querySelectorAll(".chapter-card.selected");
-
-      chapterCards.forEach((card) => {
-        selectedChapters.push(card.innerText.trim());
-      });
-
-      // Add selected chapters to myPhysicsChapters
-      for (let chapter of selectedChapters) {
-        if (!myPhysicsChapters.includes(chapter)) {
-          myPhysicsChapters.push(chapter);
-        }
-      }
-
-      // Remove selected chapters from the main list
-      for (let chapter of selectedChapters) {
-        const index = allPhysicsChapters.indexOf(chapter);
-        if (index > -1) {
-          allPhysicsChapters.splice(index, 1);
-        }
-      }
-      saveChapters()
-      saveAllChapters()
-      renderChapters(); // Re-render the remaining chapters
+function renderAllPhysics() {
+    buttonContainer.innerHTML = ""
+    allChapters.innerHTML = ""
+    allPhysicsChapters.forEach(chapter => {
+        const chapterCard = document.createElement("span")
+        chapterCard.className = "card p"
+        chapterCard.innerText = chapter
+        allChapters.appendChild(chapterCard)
+        chapterCard.addEventListener("click", () => {
+            chapterCard.classList.toggle("s2-add")
+        })
     });
+    const addNewPhysics = document.createElement("button")
+    addNewPhysics.innerText = "ADD"
+    addNewPhysics.className = "add-button"
+    buttonContainer.appendChild(addNewPhysics)
+    addNewPhysics.addEventListener("click", () => {
+        const selectedChapters = []
+        const chapterCards = allChapters.querySelectorAll(".card.p.s2-add")
 
-    addChemistryChapter.addEventListener("click", () => {
-      const selectedChapters = [];
-      const chapterCards = syllabusChe.querySelectorAll(".chapter-card.selected");
+        chapterCards.forEach((card) => {
+            selectedChapters.push(card.innerText)
+        })
 
-      chapterCards.forEach((card) => {
-        selectedChapters.push(card.innerText.trim());
-      });
+        selectedChapters.forEach(item => {
+            if (!myPhysicsChapters.includes(item)) {
+                myPhysicsChapters.push(item)
+            }
+        })
+        selectedChapters.forEach(item => {
+            const index = allPhysicsChapters.indexOf(item)
+            if (index > -1) {
+                allPhysicsChapters.splice(index, 1)
+            }
+        })
+        saveAllChapters()
+        saveChapters()
+        renderMyChapters()
+        renderAllPhysics()
+    })
+    removePhysics.style.display = "none"
+}
 
-      // Add selected chapters to myPhysicsChapters
-      for (let chapter of selectedChapters) {
-        if (!myChemistryChapters.includes(chapter)) {
-          myChemistryChapters.push(chapter);
-        }
-      }
-
-      // Remove selected chapters from the main list
-      for (let chapter of selectedChapters) {
-        const index = allChemistryChapters.indexOf(chapter);
-        if (index > -1) {
-          allChemistryChapters.splice(index, 1);
-        }
-      }
-      saveChapters()
-      saveAllChapters()
-      renderChapters(); // Re-render the remaining chapters
+function renderAllChemistry() {
+    buttonContainer.innerHTML = ""
+    allChapters.innerHTML = ""
+    allChemistryChapters.forEach(chapter => {
+        const chapterCard = document.createElement("span")
+        chapterCard.className = "card c"
+        chapterCard.innerText = chapter
+        allChapters.appendChild(chapterCard)
+        chapterCard.addEventListener("click", () => {
+            chapterCard.classList.toggle("s2-add")
+        })
     });
+    const addNewChemistry = document.createElement("button")
+    addNewChemistry.innerText = "ADD"
+    addNewChemistry.className = "add-button"
+    buttonContainer.appendChild(addNewChemistry)
+    addNewChemistry.addEventListener("click", () => {
+        const selectedChapters = []
+        const chapterCards = allChapters.querySelectorAll(".card.c.s2-add")
 
-    addBiologyChapter.addEventListener("click", () => {
-      const selectedChapters = [];
-      const chapterCards = syllabusBio.querySelectorAll(".chapter-card.selected");
+        chapterCards.forEach((card) => {
+            selectedChapters.push(card.innerText)
+        })
 
-      chapterCards.forEach((card) => {
-        selectedChapters.push(card.innerText.trim());
-      });
+        selectedChapters.forEach(item => {
+            if (!myChemistryChapters.includes(item)) {
+                myChemistryChapters.push(item)
+            }
+        })
+        selectedChapters.forEach(item => {
+            const index = allChemistryChapters.indexOf(item)
+            if (index > -1) {
+                allChemistryChapters.splice(index, 1)
+            }
+        })
+        saveAllChapters()
+        saveChapters()
+        renderMyChapters()
+        renderAllChemistry()
+    })
+    removeChemistry.style.display = "none"
+}
 
-      // Add selected chapters to myPhysicsChapters
-      for (let chapter of selectedChapters) {
-        if (!myBiologyChapters.includes(chapter)) {
-          myBiologyChapters.push(chapter);
-        }
-      }
-
-      // Remove selected chapters from the main list
-      for (let chapter of selectedChapters) {
-        const index = allBiologyChapters.indexOf(chapter);
-        if (index > -1) {
-          allBiologyChapters.splice(index, 1);
-        }
-      }
-      saveChapters()
-      saveAllChapters()
-      renderChapters(); // Re-render the remaining chapters
+function renderAllBiology() {
+    buttonContainer.innerHTML = ""
+    allChapters.innerHTML = ""
+    allBiologyChapters.forEach(chapter => {
+        const chapterCard = document.createElement("span")
+        chapterCard.className = "card b"
+        chapterCard.innerText = chapter
+        allChapters.appendChild(chapterCard)
+        chapterCard.addEventListener("click", () => {
+            chapterCard.classList.toggle("s2-add")
+        })
     });
+    const addNewBiology = document.createElement("button")
+    addNewBiology.innerText = "ADD"
+    addNewBiology.className = "add-button"
+    buttonContainer.appendChild(addNewBiology)
+    addNewBiology.addEventListener("click", () => {
+        const selectedChapters = []
+        const chapterCards = allChapters.querySelectorAll(".card.b.s2-add")
 
-    // Handle to remove Chapter on Button Click
-    removePhy.addEventListener("click", () => {
-      const selectedChapters = [];
-      const chapterCards = myPhyChapters.querySelectorAll(".chapter-card.selected-to-remove");
+        chapterCards.forEach((card) => {
+            selectedChapters.push(card.innerText)
+        })
 
-      chapterCards.forEach((card) => {
-        selectedChapters.push(card.innerText.trim());
-      });
+        selectedChapters.forEach(item => {
+            if (!myBiologyChapters.includes(item)) {
+                myBiologyChapters.push(item)
+            }
+        })
+        selectedChapters.forEach(item => {
+            const index = allBiologyChapters.indexOf(item)
+            if (index > -1) {
+                allBiologyChapters.splice(index, 1)
+            }
+        })
+        saveAllChapters()
+        saveChapters()
+        renderMyChapters()
+        renderAllBiology()
+    })
+    removeBiology.style.display = "none"
+}
 
-      // Add selected chapters to myPhysicsChapters
-      for (let chapter of selectedChapters) {
-        if (!allPhysicsChapters.includes(chapter)) {
-          allPhysicsChapters.push(chapter);
-        }
-      }
+showAllPhysics.addEventListener("click", () => {
+    renderAllPhysics()
+    goDown()
+})
+showAllChemistry.addEventListener("click", () => {
+    renderAllChemistry()
+    goDown()
+})
+showAllBiology.addEventListener("click", () => {
+    renderAllBiology()
+    goDown()
+})
 
-      // Remove selected chapters from the main list
-      for (let chapter of selectedChapters) {
-        const index = myPhysicsChapters.indexOf(chapter);
-        if (index > -1) {
-          myPhysicsChapters.splice(index, 1);
-        }
-      }
-      saveChapters()
-      saveAllChapters()
-      renderChapters(); // Re-render chapters
+function goDown() {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth", // Optional: adds a smooth scrolling effect
     });
+}
 
-    removeChe.addEventListener("click", () => {
-      const selectedChapters = [];
-      const chapterCards = myCheChapters.querySelectorAll(".chapter-card.selected-to-remove");
+removePhysics.addEventListener("click", () => {
+    const selectedChapters = [];
+    const chapterCards = myPhysics.querySelectorAll(".my-card.p.s2-remove")
 
-      chapterCards.forEach((card) => {
-        selectedChapters.push(card.innerText.trim());
-      });
-
-      // Add selected chapters to myPhysicsChapters
-      for (let chapter of selectedChapters) {
-        if (!allChemistryChapters.includes(chapter)) {
-          allChemistryChapters.push(chapter);
+    chapterCards.forEach((card) => {
+        selectedChapters.push(card.innerText)
+    })
+    selectedChapters.forEach(item => {
+        if (!allPhysicsChapters.includes(item)) {
+            allPhysicsChapters.push(item)
         }
-      }
-
-      // Remove selected chapters from the main list
-      for (let chapter of selectedChapters) {
-        const index = myChemistryChapters.indexOf(chapter);
+    })
+    selectedChapters.forEach(item => {
+        const index = myPhysicsChapters.indexOf(item)
         if (index > -1) {
-          myChemistryChapters.splice(index, 1);
+            myPhysicsChapters.splice(index, 1)
         }
-      }
-      saveChapters()
-      saveAllChapters()
-      renderChapters(); // Re-render chapters
-    });
+    })
+    saveAllChapters()
+    saveChapters()
+    renderMyChapters()
+    renderAllPhysics()
+    goDown()
+})
+removeChemistry.addEventListener("click", () => {
+    const selectedChapters = [];
+    const chapterCards = myChemistry.querySelectorAll(".my-card.c.s2-remove")
 
-    removeBio.addEventListener("click", () => {
-      const selectedChapters = [];
-      const chapterCards = myBioChapters.querySelectorAll(".chapter-card.selected-to-remove");
-
-      chapterCards.forEach((card) => {
-        selectedChapters.push(card.innerText.trim());
-      });
-
-      // Add selected chapters to myPhysicsChapters
-      for (let chapter of selectedChapters) {
-        if (!allBiologyChapters.includes(chapter)) {
-          allBiologyChapters.push(chapter);
+    chapterCards.forEach((card) => {
+        selectedChapters.push(card.innerText)
+    })
+    selectedChapters.forEach(item => {
+        if (!allChemistryChapters.includes(item)) {
+            allChemistryChapters.push(item)
         }
-      }
-
-      // Remove selected chapters from the main list
-      for (let chapter of selectedChapters) {
-        const index = myBiologyChapters.indexOf(chapter);
+    })
+    selectedChapters.forEach(item => {
+        const index = myChemistryChapters.indexOf(item)
         if (index > -1) {
-          myBiologyChapters.splice(index, 1);
+            myChemistryChapters.splice(index, 1)
         }
-      }
-      saveChapters()
-      saveAllChapters()
-      renderChapters(); // Re-render chapters
-    });
+    })
+    saveAllChapters()
+    saveChapters()
+    renderMyChapters()
+    renderAllChemistry()
+    goDown()
+})
+removeBiology.addEventListener("click", () => {
+    const selectedChapters = [];
+    const chapterCards = myBiology.querySelectorAll(".my-card.b.s2-remove")
 
-    // Save the updated allChapters to localStorage
-    function saveAllChapters() {
-      localStorage.setItem("allPhysicsChapters", JSON.stringify(allPhysicsChapters));
-      localStorage.setItem("allChemistryChapters", JSON.stringify(allChemistryChapters));
-      localStorage.setItem("allBiologyChapters", JSON.stringify(allBiologyChapters));
-    }
+    chapterCards.forEach((card) => {
+        selectedChapters.push(card.innerText)
+    })
+    selectedChapters.forEach(item => {
+        if (!allBiologyChapters.includes(item)) {
+            allBiologyChapters.push(item)
+        }
+    })
+    selectedChapters.forEach(item => {
+        const index = myBiologyChapters.indexOf(item)
+        if (index > -1) {
+            myBiologyChapters.splice(index, 1)
+        }
+    })
+    saveAllChapters()
+    saveChapters()
+    renderMyChapters()
+    renderAllBiology()
+    goDown()
+})
 
+// Save the updated allChapters to localStorage
+function saveAllChapters() {
+    localStorage.setItem("allPhysicsChapters", JSON.stringify(allPhysicsChapters));
+    localStorage.setItem("allChemistryChapters", JSON.stringify(allChemistryChapters));
+    localStorage.setItem("allBiologyChapters", JSON.stringify(allBiologyChapters));
+}
+//save to localStorage
+function saveChapters() {
+    localStorage.setItem("myPhysicsChapters", JSON.stringify(myPhysicsChapters));
+    localStorage.setItem("myChemistryChapters", JSON.stringify(myChemistryChapters));
+    localStorage.setItem("myBiologyChapters", JSON.stringify(myBiologyChapters));
+}
 
-    //save to localStorage
-    function saveChapters() {
-      localStorage.setItem("myPhysicsChapters", JSON.stringify(myPhysicsChapters));
-      localStorage.setItem("myChemistryChapters", JSON.stringify(myChemistryChapters));
-      localStorage.setItem("myBiologyChapters", JSON.stringify(myBiologyChapters));
-    }
-
-
-    // Initial render
-    renderChapters();
+renderMyChapters()
