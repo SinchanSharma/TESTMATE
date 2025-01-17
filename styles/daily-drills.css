@@ -18,7 +18,7 @@
         }
         #gen-button:active{
           background-color: rgb(255, 174, 25);
-          transform: scale(0.97);
+          transform: scale(0.98);
         }
 
         .card-container {
@@ -34,8 +34,8 @@
 
         .card {
             background-color: #090d3d1f;
-            height: 190px;
-            width: 160px;
+            height: 170px;
+            width: 150px;
             border-radius: 10px;
             display: flex;
             flex-direction: column;
@@ -43,7 +43,7 @@
         }
 
         .test-num {
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .test-date {
@@ -57,29 +57,27 @@
         .test-condition {
             color: rgb(255, 255, 255);
             background-color: green;
-            padding: 6px 25px;
+            padding: 3px 17px;
             border: none;
-            border-radius: 16px;
-            margin-top: 40px;
+            border-radius: 50px;
+            margin-top: 30px;
             cursor: pointer;
             transition: transform 0.3s ease, background-color 0.3s ease; /* Added transition */
         }
-        .test-condition:hover{
-          background-color: rgb(0, 187, 0);
-        }
+       
         .test-condition:active{
-          background-color: rgb(0, 239, 0);
-          transform: scale(0.9);
+          background-color: rgb(0, 175, 0);
+          transform: scale(0.95);
         }
 
 
         .final-condition {
             background-color: #b3b3b3;
             color: black;
-            padding: 6px 25px;
+            padding: 3px 17px;
             border: none;
-            border-radius: 16px;
-            margin-top: 40px;
+            border-radius: 50px;
+            margin-top: 30px;
         }
 
         #dropdown{
