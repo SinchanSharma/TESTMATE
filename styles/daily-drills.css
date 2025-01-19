@@ -13,9 +13,6 @@
             cursor: pointer;
             transition: transform 0.3s ease, background-color 0.3s ease; /* Added transition */
           }
-        #gen-button:hover{
-          background-color: rgb(220, 143, 0);
-        }
         #gen-button:active{
           background-color: rgb(255, 174, 25);
           transform: scale(0.98);
