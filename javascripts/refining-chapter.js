@@ -65,17 +65,26 @@
             };
             if (currentContent.fig !== null && currentContent.fig !== undefined) {
                 testQuestionfig.style.display = 'block';
-                testQuestionfig.innerHTML = `<img src="${currentContent.fig}">`;
+                testQuestionfig.innerHTML = `<img src="database/figures/${currentContent.fig}">`;
             } else {
                 testQuestionfig.style.display = 'none';
             }
-            // Populate options
+           // Populate options
+           if(currentContent.o1){
             optionItems.innerHTML = `
               <li id="o1"><span>(1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>${currentContent.o1}</span></li>
               <li id="o2"><span>(2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>${currentContent.o2}</span></li>
               <li id="o3"><span>(3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>${currentContent.o3}</span></li>
               <li id="o4"><span>(4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>${currentContent.o4}</span></li>
               `;
+            }else{
+                optionItems.innerHTML = `
+              <li id="o1"><span>(1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span><img src="database/figures/${currentContent.io1}"></span></li>
+              <li id="o2"><span>(2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span><img src="database/figures/${currentContent.io2}"></span></li>
+              <li id="o3"><span>(3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span><img src="database/figures/${currentContent.io3}"></span></li>
+              <li id="o4"><span>(4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span><img src="database/figures/${currentContent.io4}"></span></li>
+              `;
+            }
             const actualAns = currentContent.ans;
             Array.from(optionItems.children).forEach(li => {
                 currentScore.innerText = ""
@@ -99,17 +108,26 @@
             };
             if (currentContent.fig !== null && currentContent.fig !== undefined) {
                 testQuestionfig.style.display = 'block';
-                testQuestionfig.innerHTML = `<img src="${currentContent.fig}">`;
+                testQuestionfig.innerHTML = `<img src="database/figures/${currentContent.fig}">`;
             } else {
                 testQuestionfig.style.display = 'none';
             }
             // Populate options
+            if(currentContent.o1){
             optionItems.innerHTML = `
               <li id="o1"><span>(1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>${currentContent.o1}</span></li>
               <li id="o2"><span>(2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>${currentContent.o2}</span></li>
               <li id="o3"><span>(3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>${currentContent.o3}</span></li>
               <li id="o4"><span>(4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>${currentContent.o4}</span></li>
+              `;              
+            }else{
+                optionItems.innerHTML = `
+              <li id="o1"><span>(1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span><img src="database/figures/${currentContent.io1}"></span></li>
+              <li id="o2"><span>(2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span><img src="database/figures/${currentContent.io2}"></span></li>
+              <li id="o3"><span>(3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span><img src="database/figures/${currentContent.io3}"></span></li>
+              <li id="o4"><span>(4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span><img src="database/figures/${currentContent.io4}"></span></li>
               `;
+            }
             const actualAns = currentContent.ans;
 
             const listItems = Array.from(optionItems.children);
